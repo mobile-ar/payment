@@ -19,7 +19,6 @@ class AmountViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.creditCardButton.isEnabled = false
         self.amountField.delegate = self
     }
     
