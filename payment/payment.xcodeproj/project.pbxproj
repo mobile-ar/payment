@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283C9D311F1D486D002A6B01 /* card_issuers.json in Resources */ = {isa = PBXBuildFile; fileRef = 283C9D301F1D486D002A6B01 /* card_issuers.json */; };
+		283C9D341F1D5F2D002A6B01 /* CardIssuersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D331F1D5F2D002A6B01 /* CardIssuersViewController.swift */; };
+		283C9D361F1D5F4C002A6B01 /* CardIssuersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D351F1D5F4C002A6B01 /* CardIssuersCell.swift */; };
+		283C9D391F1E3D3D002A6B01 /* ControllerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D381F1E3D3D002A6B01 /* ControllerNavigator.swift */; };
+		283C9D3B1F1E3D58002A6B01 /* ControllerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D3A1F1E3D58002A6B01 /* ControllerSource.swift */; };
+		283C9D3E1F1E4687002A6B01 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D3D1F1E4687002A6B01 /* Extensions.swift */; };
+		283C9D401F1EB5DF002A6B01 /* installments.json in Resources */ = {isa = PBXBuildFile; fileRef = 283C9D3F1F1EB5DF002A6B01 /* installments.json */; };
+		283C9D431F1FA5DA002A6B01 /* InstallmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D421F1FA5DA002A6B01 /* InstallmentsViewController.swift */; };
+		283C9D451F1FA5EF002A6B01 /* InstallmentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283C9D441F1FA5EF002A6B01 /* InstallmentsCell.swift */; };
 		28681B4E1F1194690091BC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28681B4D1F1194690091BC28 /* AppDelegate.swift */; };
 		28681B501F1194690091BC28 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28681B4F1F1194690091BC28 /* AmountViewController.swift */; };
 		28681B531F1194690091BC28 /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28681B511F1194690091BC28 /* Payment.storyboard */; };
@@ -25,6 +34,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		283C9D301F1D486D002A6B01 /* card_issuers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = card_issuers.json; sourceTree = "<group>"; };
+		283C9D331F1D5F2D002A6B01 /* CardIssuersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardIssuersViewController.swift; sourceTree = "<group>"; };
+		283C9D351F1D5F4C002A6B01 /* CardIssuersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardIssuersCell.swift; sourceTree = "<group>"; };
+		283C9D381F1E3D3D002A6B01 /* ControllerNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerNavigator.swift; sourceTree = "<group>"; };
+		283C9D3A1F1E3D58002A6B01 /* ControllerSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerSource.swift; sourceTree = "<group>"; };
+		283C9D3D1F1E4687002A6B01 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		283C9D3F1F1EB5DF002A6B01 /* installments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = installments.json; sourceTree = "<group>"; };
+		283C9D421F1FA5DA002A6B01 /* InstallmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallmentsViewController.swift; sourceTree = "<group>"; };
+		283C9D441F1FA5EF002A6B01 /* InstallmentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallmentsCell.swift; sourceTree = "<group>"; };
 		28681B4A1F1194690091BC28 /* payment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = payment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28681B4D1F1194690091BC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28681B4F1F1194690091BC28 /* AmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +76,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283C9D321F1D5F02002A6B01 /* Card Issuers */ = {
+			isa = PBXGroup;
+			children = (
+				283C9D331F1D5F2D002A6B01 /* CardIssuersViewController.swift */,
+				283C9D351F1D5F4C002A6B01 /* CardIssuersCell.swift */,
+			);
+			name = "Card Issuers";
+			sourceTree = "<group>";
+		};
+		283C9D371F1E3D10002A6B01 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				283C9D381F1E3D3D002A6B01 /* ControllerNavigator.swift */,
+				283C9D3A1F1E3D58002A6B01 /* ControllerSource.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		283C9D3C1F1E4678002A6B01 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				283C9D3D1F1E4687002A6B01 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		283C9D411F1FA5AD002A6B01 /* Installments */ = {
+			isa = PBXGroup;
+			children = (
+				283C9D421F1FA5DA002A6B01 /* InstallmentsViewController.swift */,
+				283C9D441F1FA5EF002A6B01 /* InstallmentsCell.swift */,
+			);
+			name = Installments;
+			sourceTree = "<group>";
+		};
 		28681B411F1194690091BC28 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +132,8 @@
 		28681B4C1F1194690091BC28 /* payment */ = {
 			isa = PBXGroup;
 			children = (
+				283C9D3C1F1E4678002A6B01 /* Helpers */,
+				283C9D371F1E3D10002A6B01 /* Navigation */,
 				289BE0D81F1451BF00B06C1C /* ViewControllers */,
 				289BE0D41F14503C00B06C1C /* Utilities */,
 				28681B611F13B4200091BC28 /* Storyboards */,
@@ -139,6 +194,8 @@
 		289BE0D11F144EFE00B06C1C /* StubbedResponses */ = {
 			isa = PBXGroup;
 			children = (
+				283C9D301F1D486D002A6B01 /* card_issuers.json */,
+				283C9D3F1F1EB5DF002A6B01 /* installments.json */,
 				289BE0D21F144FF400B06C1C /* payment_methods.json */,
 			);
 			name = StubbedResponses;
@@ -164,6 +221,8 @@
 		289BE0D81F1451BF00B06C1C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				283C9D321F1D5F02002A6B01 /* Card Issuers */,
+				283C9D411F1FA5AD002A6B01 /* Installments */,
 				289BE0D71F1451A600B06C1C /* Payment Method */,
 				28681B601F13B4110091BC28 /* Amout */,
 			);
@@ -251,7 +310,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				28681B581F1194690091BC28 /* LaunchScreen.storyboard in Resources */,
+				283C9D401F1EB5DF002A6B01 /* installments.json in Resources */,
 				289BE0D31F144FF400B06C1C /* payment_methods.json in Resources */,
+				283C9D311F1D486D002A6B01 /* card_issuers.json in Resources */,
 				28681B551F1194690091BC28 /* Assets.xcassets in Resources */,
 				28681B531F1194690091BC28 /* Payment.storyboard in Resources */,
 			);
@@ -312,12 +373,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				283C9D431F1FA5DA002A6B01 /* InstallmentsViewController.swift in Sources */,
+				283C9D361F1D5F4C002A6B01 /* CardIssuersCell.swift in Sources */,
 				28681B6F1F13FAFD0091BC28 /* BaseService.swift in Sources */,
 				289BE0DA1F152D5E00B06C1C /* PaymentMethodCell.swift in Sources */,
+				283C9D451F1FA5EF002A6B01 /* InstallmentsCell.swift in Sources */,
+				283C9D341F1D5F2D002A6B01 /* CardIssuersViewController.swift in Sources */,
+				283C9D3B1F1E3D58002A6B01 /* ControllerSource.swift in Sources */,
 				28681B501F1194690091BC28 /* AmountViewController.swift in Sources */,
 				28681B641F13C1C30091BC28 /* PaymentMethodViewController.swift in Sources */,
 				289BE0D61F14504D00B06C1C /* FileReader.swift in Sources */,
 				28681B6B1F13EE4C0091BC28 /* Network.swift in Sources */,
+				283C9D391F1E3D3D002A6B01 /* ControllerNavigator.swift in Sources */,
+				283C9D3E1F1E4687002A6B01 /* Extensions.swift in Sources */,
 				28681B4E1F1194690091BC28 /* AppDelegate.swift in Sources */,
 				28681B661F13E7790091BC28 /* ServiceConstants.swift in Sources */,
 				28681B6D1F13EFA90091BC28 /* DefaultAlamofireManager.swift in Sources */,

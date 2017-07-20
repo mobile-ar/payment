@@ -1,21 +1,21 @@
 //
-//  PaymentMethodViewController.swift
+//  CardIssuersViewController.swift
 //  payment
 //
-//  Created by Fernando Romiti on 7/10/17.
+//  Created by Fernando Romiti on 7/17/17.
 //  Copyright © 2017 Fernando Romiti. All rights reserved.
 //
 
 import Foundation
 import UIKit
-import Moya
 
-class PaymentMethodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CardIssuersViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var items = [PaymentMethod]()
+    var items = [CardIssuer]()
+    var paymentMethod = PaymentMethod()
     var amount = Float(0)
     
     weak var delegate: InstallmentsDelegate?
@@ -27,13 +27,14 @@ class PaymentMethodViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func loadData() {
-        Network.request(service: PaymentService.listPaymentMethods, provider: nil, success: {[weak self] (parsedObjects) in
+        Network.request(service: PaymentService.listCardIssuers(paymentMethodId: self.paymentMethod.id), provider: nil, success: {[weak self] (parsedObjects) in
             if let parsedObjects = parsedObjects {
                 
                 for item in parsedObjects {
                     if let id = item["id"] as? String,
-                        let name = item["name"] as? String {
-                        self?.items.append(PaymentMethod(id: id, name: name))
+                        let name = item["name"] as? String,
+                        let secureThumbnail = item["secure_thumbnail"] as? String {
+                        self?.items.append(CardIssuer(id: id, name: name, secureThumbnail: secureThumbnail))
                     }
                 }
                 
@@ -42,14 +43,14 @@ class PaymentMethodViewController: UIViewController, UITableViewDelegate, UITabl
                     self?.tableView.reloadData()
                 }
             }
-        }, error: { (error) in
-            print(error)
+            }, error: { (error) in
+                print(error)
         }, failure: { (error) in
             print(error)
         })
-    
+        
     }
-
+    
     @IBAction func cancelTapped(_ sender: UIButton) {
         _ = self.navigationController?.popToRootViewController(animated: true)
     }
@@ -57,7 +58,7 @@ class PaymentMethodViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: UITableViewDelegate - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as? PaymentMethodCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cardIssuersCell", for: indexPath) as? CardIssuersCell else { return UITableViewCell() }
         cell.item = items[indexPath.row]
         return cell
     }
@@ -67,7 +68,7 @@ class PaymentMethodViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ControllerNavigator.showCardIssuers(for: items[indexPath.row], amount: amount, delegate: self.delegate)
+        ControllerNavigator.showInstallments(for: self.paymentMethod, amount: self.amount, issuer: items[indexPath.row], delegate: self.delegate)
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     

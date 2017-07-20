@@ -8,13 +8,15 @@
 
 import UIKit
 
-class AmountViewController: UIViewController, UITextFieldDelegate {
+class AmountViewController: UIViewController, UITextFieldDelegate, InstallmentsDelegate {
     
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var creditCardButton: UIButton!
     
     @IBAction func creditCardButtonTapped(_ sender: UIButton) {
-        // show payment method
+        guard let amountString = self.amountField.text else { return }
+        guard let amount = Float(amountString) else { return }
+        ControllerNavigator.showPaymentMethod(for: amount, delegate: self)
     }
     
     override func viewDidLoad() {
@@ -40,5 +42,16 @@ class AmountViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // MARK: InstallmentsDelegate
+    
+    func selected(amount: Float, paymentMethod: String, cardIssuer: String, installment: String) {
+        let title = "Your selection"
+        let message = "Amount: \(amount)\nPayment Method: \(paymentMethod)\nCard Issuer: \(cardIssuer)\nInstallments: \(installment)"
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let dismissAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel)
+        alertController.addAction(dismissAction)
+        
+        self.present(alertController, animated: true, completion: { self.amountField.text = "" })
+    }
 }
 
