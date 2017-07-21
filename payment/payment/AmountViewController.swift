@@ -47,8 +47,8 @@ class AmountViewController: UIViewController, UITextFieldDelegate, InstallmentsD
     func selected(amount: Float, paymentMethod: String, cardIssuer: String, installment: String) {
         let title = "Your selection"
         let message = "Amount: \(amount)\nPayment Method: \(paymentMethod)\nCard Issuer: \(cardIssuer)\nInstallments: \(installment)"
-        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let dismissAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel)
+        let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let dismissAction: UIAlertAction = UIAlertAction(title: "OK", style: .cancel)
         alertController.addAction(dismissAction)
         
         self.present(alertController, animated: true, completion: { self.amountField.text = "" })
